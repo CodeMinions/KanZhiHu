@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!--标题栏-->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/len_68"
+        android:background="@color/white"
+        android:elevation="3dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_margin="@dimen/len_20"
+            android:text="@string/xiaoxi_text"
+            android:textColor="#000000"
+            android:textSize="@dimen/font_22" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end|center_vertical"
+            android:layout_margin="@dimen/len_10"
+            android:src="@drawable/ic_setting" />
+    </FrameLayout>
+
+    <!--私信入口-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/len_80"
+        android:layout_marginVertical="10dp"
+        android:background="@color/white"
+        android:elevation="3dp"
+        tools:targetApi="O">
+
+        <ImageView
+            android:layout_width="@dimen/len_80"
+            android:layout_height="@dimen/len_80"
+            android:padding="@dimen/len_14"
+            android:src="@drawable/ic_primsg" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="end"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:orientation="vertical"
+            android:padding="@dimen/len_8">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/sixin_text"
+                android:textColor="#000000"
+                android:textSize="@dimen/font_18" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="abcdefg" />
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="@dimen/len_16"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/len_16"
+            android:src="@drawable/ic_next" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="46dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginHorizontal="14dp"
+                android:text="@string/tongzhi_text"
+                android:textSize="15sp"
+                tools:targetApi="O" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end|center_vertical"
+                android:layout_marginHorizontal="@dimen/len_16"
+                android:gravity="center"
+                tools:targetApi="O">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableEnd="@drawable/ic_gou"
+                    android:drawablePadding="@dimen/len_4"
+                    android:text="@string/yidu_text" />
+                <!--<ImageView-->
+                <!--android:src="@drawable/ic_gou"-->
+                <!--android:layout_margin="@dimen/len_4"-->
+                <!--android:layout_width="@dimen/font_16"-->
+                <!--android:layout_height="wrap_content" />-->
+            </LinearLayout>
+        </FrameLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.8dp"
+            android:background="#bebdbd" />
+
+        <!--通知列表-->
+        <android.support.v7.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_gravity="bottom"
+            android:layout_weight="1">
+
+        </android.support.v7.widget.RecyclerView>
+    </LinearLayout>
+
+</LinearLayout>

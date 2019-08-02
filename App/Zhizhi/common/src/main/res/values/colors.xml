@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#1522b6</color>
+    <color name="colorPrimaryDark">#020a6b</color>
+    <color name="colorAccent">#d81b28</color>
+
+    <!--背景色-->
+    <color name="windowsBackground">#e9e9e9</color>
+    <color name="windowsBackgroundLight">#f7f7f7</color>
+
+    <!--字体 图标颜色-->
+    <color name="textClick">#FF0084FC</color>
+    <color name="textPrimary">#717171</color>
+
+    <color name="searchBack">#eaeaea</color>
+</resources>

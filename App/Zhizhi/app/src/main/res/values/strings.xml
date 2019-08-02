@@ -1,0 +1,41 @@
+<resources>
+    <string name="app_name">Zhizhi</string>
+
+    <!--首页-->
+    <string name="search_text">搜索知乎内容</string>
+    <string name="ask_text">提问</string>
+
+    <!--消息-->
+    <string name="xiaoxi_text">消息</string>
+    <string name="sixin_text">私信</string>
+    <string name="tongzhi_text">通知列表</string>
+    <string name="yidu_text">全部已读</string>
+
+    <!--大学-->
+    <string name="huiyuan_text">课程随意听，好书任意读</string>
+    <string name="kaitong_text">开通会员</string>
+
+    <!--我的-->
+    <string name="default_name">user_name</string>
+    <string name="default_describe">describe</string>
+    <string name="default_num">num</string>
+    <string name="zhuye_text">个人主页 </string>
+    <string name="creation">我的创作</string>
+    <string name="attention">关注</string>
+    <string name="collection">我的收藏</string>
+    <string name="recent">最近浏览</string>
+    <string name="college_text">知乎大学</string>
+    <string name="buy_text">已购</string>
+    <string name="gift_text">余额礼券</string>
+    <string name="live_text">我的live</string>
+    <string name="bookcase_text">我的书架</string>
+    <string name="myClass">我的私家课</string>
+    <string name="payAsk_text">付费咨询</string>
+    <string name="square_text">活动广场</string>
+    <string name="help_text">反馈与帮助</string>
+    <string name="night_text">夜间模式</string>
+    <string name="setting">设置</string>
+
+    <string name="example">1.世上的事情都经不起推敲，一推敲，哪一件都藏着委屈。——刘震云 《一句顶一万句》\n\n4.你若惹我，不要忘记，每个女人的血液里都一样藏有阿修罗。——亦舒 《阿修罗》\n\n5.你来时冬至，但眉上风止，开口是“我来得稍稍迟”。大抵知心有庭树，亭亭一如你风致。——溱桑《此日无事》\n\n6.大人本身就是如此复杂的动物，阴暗的内心，牵绊的关系，披着伪装的自尊心，怎么可能酿造出一份不含杂质的感情？——八月长安 《橘生淮南·暗恋》 \n\n14.经一场大梦，梦中见满眼山花如翡，如见故人，喜不自胜。――priest《有匪》 \n\n15.纵使文章惊海内，纸上苍生而已。――龚自珍\n\n16.如果你能预知这条路的陷阱，我想你依然错得很过瘾。 ――五月天《顽固》\n\n22.你简单，世界就是童话；你复杂，世界就是迷宫。――宫崎骏</string>
+
+</resources>

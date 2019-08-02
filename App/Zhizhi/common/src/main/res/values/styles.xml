@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="AppTheme.private" parent="Theme.AppCompat">
+        <!--复写三个主色调-->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+
+        <!--NoTitle-->
+        <item name="windowActionBar">false</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="windowNoTitle">true</item>
+
+        <!--Background-->
+        <item name="android:windowBackground">@color/windowsBackground</item>
+    </style>
+
+    <style name="AppCompat.Base" parent="AppTheme.private" />
+</resources>

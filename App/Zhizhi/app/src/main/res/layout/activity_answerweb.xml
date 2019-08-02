@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!--搜索框-->
+    <android.support.v7.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/windowsBackgroundLight">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_gravity="top"
+            android:layout_margin="@dimen/len_10"
+            android:background="@drawable/border_search">
+
+
+            <me.codeminions.zhizhi.view.IconTxtView
+                android:id="@+id/img_search"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:layout_marginHorizontal="@dimen/len_10"
+                app:iconLocation="start"
+                app:icon="@drawable/ic_back"
+                app:iconS="18dp"
+                app:text="@string/search_text"
+                app:textColor="@color/textPrimary"
+                app:textSize="16sp"
+                app:textToP="@dimen/len_44"
+                tools:targetApi="O" />
+
+            <FrameLayout
+                android:id="@+id/frame_ask"
+                android:layout_width="78dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="20dp">
+
+                <ImageView
+                    android:layout_width="@dimen/font_20"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:layout_marginHorizontal="@dimen/len_8"
+                    android:src="@drawable/ic_share"
+                    android:tint="@color/black_alpha_112"
+                    tools:targetApi="o" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:tint="@color/black_alpha_112"
+                    android:src="@drawable/ic_more_vert" />
+            </FrameLayout>
+
+
+        </RelativeLayout>
+    </android.support.v7.widget.Toolbar>
+
+    <me.codeminions.zhizhi.view.RLScrollView
+        android:id="@+id/scroll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="55dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/windowsBackgroundLight"
+                android:elevation="@dimen/len_10"
+                android:orientation="vertical">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#dfdfdf" />
+
+                <!--标题栏-->
+                <TextView
+                    android:id="@+id/txt_question_tit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/len_16"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/font_20"
+                    android:textStyle="bold"
+                    tools:text="有哪些惊艳到你的句子？" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#dfdfdf" />
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/len_56">
+
+                    <me.codeminions.zhizhi.view.IconTxtView
+                        android:layout_width="78dp"
+                        android:layout_height="@dimen/len_32"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="@dimen/len_20"
+                        android:paddingHorizontal="@dimen/len_6"
+                        android:textStyle="bold"
+                        app:back="#ededed"
+                        app:icon="@drawable/ic_ask"
+                        app:iconLocation="start"
+                        app:iconTint="@color/colorPrimary"
+                        app:text="写回答"
+                        app:textColor="@color/colorPrimary"
+                        app:textSize="@dimen/font_12"
+                        tools:targetApi="O" />
+
+                    <me.codeminions.zhizhi.view.IconTxtView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="end|center"
+                        android:layout_marginEnd="@dimen/len_10"
+                        app:icon="@drawable/ic_next"
+                        app:iconLocation="end"
+                        app:iconS="@dimen/len_10"
+                        app:text="查看全部1024个回答"
+                        app:textColor="@color/black_alpha_192"
+                        app:textSize="@dimen/font_14"
+                        app:textToP="@dimen/len_32" />
+                </FrameLayout>
+            </LinearLayout>
+
+            <!--答案内容-->
+            <!--曾听说过知乎的答案页就是一个webView-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/len_10"
+                android:background="@color/windowsBackgroundLight"
+                android:orientation="vertical">
+                <!--作者栏-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/len_76"
+                    android:gravity="center_vertical">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/img_college_portrait"
+                        android:layout_width="@dimen/len_48"
+                        android:layout_height="@dimen/len_48"
+                        android:layout_margin="@dimen/len_16"
+                        android:src="@drawable/default_portrait" />
+
+                    <FrameLayout
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/len_40"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="1">
+
+                        <TextView
+                            android:id="@+id/txt_Name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            tools:text="淮町" />
+
+                        <TextView
+                            android:id="@+id/txt_des"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom"
+                            android:maxLines="1"
+                            tools:text="一个做黑暗料理的美少女战士" />
+                    </FrameLayout>
+
+                    <Button
+                        android:layout_width="@dimen/len_72"
+                        android:layout_height="@dimen/len_36"
+                        android:layout_margin="@dimen/len_16"
+                        android:background="@color/colorPrimary"
+                        android:text="@string/attention"
+                        android:textColor="@color/white" />
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#dfdfdf" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="@dimen/len_10"
+                    android:orientation="vertical">
+
+                    <WebView
+                        android:id="@+id/web"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="50dp"
+                        android:background="@color/windowsBackgroundLight" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+    </me.codeminions.zhizhi.view.RLScrollView>
+
+    <RelativeLayout
+        android:id="@+id/view_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_gravity="bottom"
+        android:alpha="1"
+        android:background="@color/windowsBackgroundLight"
+        android:elevation="6dp">
+
+        <me.codeminions.zhizhi.view.IconTxtView
+            android:id="@+id/txt_praise"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:layout_marginVertical="@dimen/len_8"
+            android:layout_marginStart="@dimen/len_10"
+            android:paddingHorizontal="@dimen/len_6"
+            app:back="@drawable/border_search"
+            app:icon="@drawable/ic_top"
+            app:iconLocation="start"
+            app:iconS="@dimen/len_16"
+            app:text="赞同  149887K"
+            app:textColor="@color/black_alpha_112"
+            app:textSize="@dimen/smallWord"
+            app:textToP="@dimen/len_32"
+            tools:targetApi="O" />
+
+        <me.codeminions.zhizhi.view.IconTxtView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:layout_marginVertical="@dimen/len_8"
+            android:layout_marginStart="@dimen/len_10"
+            android:layout_toEndOf="@id/txt_praise"
+            android:paddingHorizontal="@dimen/len_2"
+            app:back="@drawable/border_search"
+            app:icon="@drawable/ic_bottom"
+            app:iconLocation="start"
+            app:iconS="@dimen/len_16"
+            app:textColor="@color/black_alpha_112"
+            app:textSize="@dimen/smallWord"
+            app:textToP="@dimen/len_4"
+            tools:targetApi="O" />
+
+        <me.codeminions.zhizhi.view.IconTxtView
+            android:id="@+id/btn_praise"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginHorizontal="@dimen/len_8"
+            android:layout_marginTop="@dimen/len_6"
+            android:layout_toStartOf="@id/btn_collect"
+            app:icon="@drawable/ic_heart"
+            app:iconLocation="top"
+            app:iconS="wrap_content"
+            app:text="124"
+            app:textSize="@dimen/font_10"
+            app:textToP="@dimen/len_6"
+            app:tint="@color/black_alpha_112"
+            tools:targetApi="O" />
+
+        <me.codeminions.zhizhi.view.IconTxtView
+            android:id="@+id/btn_collect"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginHorizontal="@dimen/len_10"
+            android:layout_marginTop="@dimen/len_6"
+            android:layout_toStartOf="@id/btn_comment"
+            app:icon="@drawable/ic_star"
+            app:iconLocation="top"
+            app:iconS="wrap_content"
+            app:text="124"
+            app:textSize="@dimen/font_10"
+            app:textToP="@dimen/len_6"
+            app:tint="@color/black_alpha_112"
+            tools:targetApi="O" />
+
+        <me.codeminions.zhizhi.view.IconTxtView
+            android:id="@+id/btn_comment"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentEnd="true"
+            android:layout_marginHorizontal="@dimen/len_8"
+            android:layout_marginTop="@dimen/len_6"
+            app:icon="@drawable/ic_comment"
+            app:iconLocation="top"
+            app:iconS="wrap_content"
+            app:text="124"
+            app:textSize="@dimen/font_10"
+            app:textToP="@dimen/len_6"
+            app:tint="@color/black_alpha_112"
+            tools:targetApi="O" />
+
+    </RelativeLayout>
+
+
+</android.support.design.widget.CoordinatorLayout>

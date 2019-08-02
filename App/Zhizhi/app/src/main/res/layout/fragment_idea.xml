@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!--标题栏-->
+    <RelativeLayout
+        android:elevation="3dp"
+        android:background="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/len_68">
+        <TextView
+            android:text="想法"
+            android:textColor="#000000"
+            android:textSize="@dimen/font_22"
+            android:layout_margin="@dimen/len_20"
+            android:layout_gravity="center_vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/img_portrait"
+            android:layout_alignParentEnd="true"
+            android:layout_margin="@dimen/len_10"
+            android:src="@drawable/default_portrait"
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            app:civ_border_color="@color/black_alpha_112"
+            app:civ_border_width="1dp"/>
+
+        <ImageView
+            android:src="@drawable/ic_search"
+            android:layout_margin="@dimen/len_10"
+            android:layout_toStartOf="@id/img_portrait"
+            android:layout_centerVertical="true"
+            android:layout_gravity="end|center_vertical"
+            android:layout_width="20dp"
+            android:layout_height="wrap_content" />
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_marginTop="@dimen/len_68"
+        android:id="@+id/layout_idea"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:background="@color/white"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!--热门讨论 横向列表-->
+            <HorizontalScrollView
+                android:background="@color/white"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/len_84">
+                <ListView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent">
+
+                </ListView>
+            </HorizontalScrollView>
+
+            <!--热门 推荐 入口-->
+            <LinearLayout
+                android:background="@drawable/border_bottom"
+                android:elevation="3dp"
+                android:layout_marginVertical="@dimen/len_4"
+                android:layout_marginHorizontal="@dimen/len_20"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/len_64"
+                tools:targetApi="O">
+                <FrameLayout
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent">
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </FrameLayout>
+                <View
+                    android:layout_gravity="center"
+                    android:background="#808080"
+                    android:layout_width="1dp"
+                    android:layout_height="30dp"/>
+                <FrameLayout
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent">
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </FrameLayout>
+
+            </LinearLayout>
+
+            <!--想法列表-->
+            <android.support.v7.widget.RecyclerView
+                android:layout_marginTop="@dimen/len_8"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="0dp">
+
+            </android.support.v7.widget.RecyclerView>
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/btn_action"
+        android:tint="@color/white"
+        android:backgroundTint="@color/textClick"
+        android:src="@drawable/ic_ask"
+        android:scaleType="center"
+        app:borderWidth="0dp"
+        android:translationZ="@dimen/len_6"
+        android:layout_width="@dimen/len_52"
+        android:layout_height="@dimen/len_52"
+        android:layout_marginBottom="@dimen/len_24"
+        android:layout_marginEnd="@dimen/len_20"
+        app:layout_anchor="@id/layout_idea"
+        app:layout_anchorGravity="end|bottom"
+        android:layout_gravity="bottom|end" />
+
+
+</android.support.design.widget.CoordinatorLayout>

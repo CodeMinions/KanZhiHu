@@ -1,0 +1,417 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.v7.widget.Toolbar
+        android:background="@color/white"
+        android:elevation="4dp"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/len_56">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_margin="@dimen/len_8"
+            android:background="@drawable/border_search" >
+            <ImageView
+                android:id="@+id/img_search"
+                android:layout_width="20dp"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_search"
+                android:layout_marginHorizontal="@dimen/len_10"
+                android:layout_alignParentStart="true"
+                tools:targetApi="O" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/len_10"
+                android:layout_toEndOf="@id/img_search"
+                android:layout_centerVertical="true"
+                android:text="@string/search_text"
+                android:textSize="16sp"
+                android:textColor="@color/textPrimary"/>
+
+            <ImageView
+                android:id="@+id/img_qrCode"
+                android:src="@drawable/ic_qrcode"
+                android:layout_centerVertical="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="14dp"
+                android:layout_width="@dimen/len_32"
+                android:layout_height="wrap_content" />
+
+        </RelativeLayout>
+    </android.support.v7.widget.Toolbar>
+
+    <LinearLayout
+        android:background="@color/red_50"
+        android:layout_width="match_parent"
+        android:layout_height="100dp">
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:src="@drawable/default_portrait"
+            android:layout_margin="@dimen/len_10"
+            android:layout_width="65dp"
+            android:layout_height="wrap_content" />
+        <FrameLayout
+            android:layout_margin="@dimen/len_14"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/len_60">
+            <TextView
+                android:text="@string/default_name"
+                android:textSize="@dimen/font_22"
+                android:layout_gravity="top"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:text="@string/default_describe"
+                android:textSize="@dimen/font_18"
+                android:layout_gravity="bottom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </FrameLayout>
+
+        <me.codeminions.zhizhi.view.IconTxtView
+            android:layout_margin="@dimen/len_16"
+            android:layout_gravity="center"
+            app:text="@string/zhuye_text"
+            app:textSize="@dimen/font_18"
+            app:textToP="@dimen/font_28"
+            app:iconS="@dimen/font_16"
+            app:iconLocation="end"
+            app:icon="@drawable/ic_next"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+        </me.codeminions.zhizhi.view.IconTxtView>
+
+    </LinearLayout>
+
+    <!--个人信息-->
+    <LinearLayout
+        android:background="@color/white"
+        android:elevation="3dp"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/len_60">
+        <FrameLayout
+            android:padding="@dimen/len_10"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_gravity="top|center"
+                android:text="@string/default_num"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:text="@string/creation"
+                android:layout_gravity="bottom|center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </FrameLayout>
+        <View
+            android:background="#808080"
+            android:layout_width="0.5dp"
+            android:layout_height="@dimen/len_28"/>
+        <FrameLayout
+            android:padding="@dimen/len_10"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_gravity="top|center"
+                android:text="@string/default_num"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:text="@string/attention"
+                android:layout_gravity="bottom|center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </FrameLayout>
+        <View
+            android:background="#808080"
+            android:layout_width="0.5dp"
+            android:layout_height="@dimen/len_28"/>
+        <FrameLayout
+            android:padding="@dimen/len_10"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_gravity="top|center"
+                android:text="@string/default_num"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:text="@string/collection"
+                android:layout_gravity="bottom|center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </FrameLayout>
+        <View
+            android:background="#808080"
+            android:layout_width="0.5dp"
+            android:layout_height="@dimen/len_28"/>
+        <FrameLayout
+            android:padding="@dimen/len_10"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_gravity="top|center"
+                android:text="@string/default_num"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:text="@string/recent"
+                android:layout_gravity="bottom|center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </FrameLayout>
+    </LinearLayout>
+
+    <!--相关活动-->
+    <FrameLayout
+        android:background="@color/white"
+        android:elevation="3dp"
+        android:layout_marginVertical="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/len_172"
+        tools:targetApi="O">
+        <LinearLayout
+            android:baselineAligned="false"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/len_84">
+            <FrameLayout
+                android:padding="@dimen/len_14"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent">
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:layout_gravity="top|center"
+                    android:src="@drawable/ic_college"
+                    android:layout_width="@dimen/len_36"
+                    android:layout_height="@dimen/len_36" />
+                <TextView
+                    android:text="@string/college_text"
+                    android:layout_gravity="bottom|center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </FrameLayout>
+            <FrameLayout
+                android:padding="@dimen/len_14"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent">
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:layout_gravity="top|center"
+                    android:src="@drawable/ic_college"
+                    android:layout_width="@dimen/len_36"
+                    android:layout_height="@dimen/len_36" />
+                <TextView
+                    android:text="@string/buy_text"
+                    android:layout_gravity="bottom|center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </FrameLayout>
+            <FrameLayout
+                android:padding="@dimen/len_14"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent">
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:layout_gravity="top|center"
+                    android:src="@drawable/ic_college"
+                    android:layout_width="@dimen/len_36"
+                    android:layout_height="@dimen/len_36" />
+                <TextView
+                    android:text="@string/gift_text"
+                    android:layout_gravity="bottom|center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </FrameLayout>
+            <FrameLayout
+                android:padding="@dimen/len_14"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent">
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:layout_gravity="top|center"
+                    android:src="@drawable/ic_college"
+                    android:layout_width="@dimen/len_36"
+                    android:layout_height="@dimen/len_36" />
+                <TextView
+                    android:text="@string/live_text"
+                    android:layout_gravity="bottom|center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </FrameLayout>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_gravity="bottom"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/len_84">
+            <FrameLayout
+                android:padding="@dimen/len_14"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent">
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:layout_gravity="top|center"
+                    android:src="@drawable/ic_college"
+                    android:layout_width="@dimen/len_36"
+                    android:layout_height="@dimen/len_36" />
+                <TextView
+                    android:text="@string/bookcase_text"
+                    android:layout_gravity="bottom|center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </FrameLayout>
+            <FrameLayout
+                android:paddingHorizontal="@dimen/len_12"
+                android:paddingVertical="@dimen/len_14"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent">
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:layout_gravity="top|center"
+                    android:src="@drawable/ic_college"
+                    android:layout_width="@dimen/len_36"
+                    android:layout_height="@dimen/len_36" />
+                <TextView
+                    android:text="@string/myClass"
+                    android:layout_gravity="bottom|center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </FrameLayout>
+            <FrameLayout
+                android:padding="@dimen/len_14"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent">
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:layout_gravity="top|center"
+                    android:src="@drawable/ic_college"
+                    android:layout_width="@dimen/len_36"
+                    android:layout_height="@dimen/len_36" />
+                <TextView
+                    android:text="@string/payAsk_text"
+                    android:layout_gravity="bottom|center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </FrameLayout>
+            <FrameLayout
+                android:padding="@dimen/len_14"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent">
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:layout_gravity="top|center"
+                    android:src="@drawable/ic_college"
+                    android:layout_width="@dimen/len_36"
+                    android:layout_height="@dimen/len_36" />
+                <TextView
+                    android:text="@string/square_text"
+                    android:layout_gravity="bottom|center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </FrameLayout>
+
+        </LinearLayout>
+    </FrameLayout>
+
+    <!--其他设置-->
+    <FrameLayout
+        android:background="@color/white"
+        android:elevation="3dp"
+        android:layout_marginVertical="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:targetApi="O">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/len_84">
+            <FrameLayout
+                android:paddingHorizontal="@dimen/len_12"
+                android:paddingVertical="@dimen/len_14"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent">
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:layout_gravity="top|center"
+                    android:src="@drawable/ic_college"
+                    android:layout_width="@dimen/len_36"
+                    android:layout_height="@dimen/len_36" />
+                <TextView
+                    android:text="@string/help_text"
+                    android:layout_gravity="bottom|center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </FrameLayout>
+            <FrameLayout
+                android:padding="@dimen/len_14"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent">
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:layout_gravity="top|center"
+                    android:src="@drawable/ic_college"
+                    android:layout_width="@dimen/len_36"
+                    android:layout_height="@dimen/len_36" />
+                <TextView
+                    android:text="@string/night_text"
+                    android:layout_gravity="bottom|center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </FrameLayout>
+            <FrameLayout
+                android:padding="@dimen/len_14"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent">
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:layout_gravity="top|center"
+                    android:src="@drawable/ic_college"
+                    android:layout_width="@dimen/len_36"
+                    android:layout_height="@dimen/len_36" />
+                <TextView
+                    android:text="@string/setting"
+                    android:layout_gravity="bottom|center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </FrameLayout>
+            <View
+                android:padding="@dimen/len_14"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent" />
+
+
+        </LinearLayout>
+
+    </FrameLayout>
+
+</LinearLayout>

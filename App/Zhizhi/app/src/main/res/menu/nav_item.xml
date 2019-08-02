@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:title="@string/action_first"
+        android:icon="@drawable/ic_baseline_subtitles_24px"
+        android:id="@+id/action_firstPage"
+        app:showAsAction="ifRoom"/>
+    <item
+        android:title="@string/action_idea"
+        android:icon="@drawable/ic_idea"
+        android:id="@+id/action_idea"
+        app:showAsAction="ifRoom" />
+    <item
+        android:title="@string/action_college"
+        android:icon="@drawable/ic_college"
+        android:id="@+id/action_college"
+        app:showAsAction="ifRoom" />
+    <item
+        android:title="@string/action_msg"
+        android:icon="@drawable/ic_msg"
+        android:id="@+id/action_msg"
+        app:showAsAction="ifRoom" />
+    <item
+        android:title="@string/action_me"
+        android:icon="@drawable/ic_me"
+        android:id="@+id/action_me"
+        app:showAsAction="ifRoom" />
+</menu>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/white"
+    android:elevation="1dp"
+    android:orientation="vertical"
+    android:padding="@dimen/len_10">
+
+    <!--问题-->
+    <TextView
+        android:id="@+id/q"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/len_8"
+        android:lineSpacingExtra="8dp"
+        android:maxLines="2"
+        tools:text="有哪些你第一眼就钟情的佳句？"
+        android:textColor="@color/black"
+        android:textSize="@dimen/font_16"
+        android:textStyle="bold" />
+
+    <!--答案预览 可能含首图片-->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/a"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:lineSpacingExtra="5dp"
+            android:maxLines="3"
+            tools:text="我失去了一只臂膀 ，就睁开了一只眼睛。——顾城八岁诗作《杨树》
+你来人间一趟，你要看看太阳。和你的心上人，一起走在街上。——海子《夏天的太阳》"
+            android:textColor="@color/black_alpha_192"
+            android:textSize="@dimen/font_14" />
+    </FrameLayout>
+
+    <!--底栏-->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/len_28"
+        android:layout_marginTop="@dimen/len_14"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:id="@+id/zan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            tools:text="20063 赞同"
+            android:textColor="#999999" />
+
+        <TextView
+            android:id="@+id/ping"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/len_10"
+            android:layout_toEndOf="@id/zan"
+            tools:text="-    546 评论"
+            android:textColor="#999999"
+            tools:ignore="RelativeOverlap" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_idea" />
+    </RelativeLayout>
+
+</LinearLayout>

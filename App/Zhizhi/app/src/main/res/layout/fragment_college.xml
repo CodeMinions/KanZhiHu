@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.design.widget.AppBarLayout
+        android:background="@color/white"
+        android:elevation="@dimen/len_4"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/len_116">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/len_76">
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/img_college_portrait"
+                android:layout_margin="@dimen/len_16"
+                android:layout_centerVertical="true"
+                android:src="@drawable/default_portrait"
+                android:layout_width="@dimen/len_44"
+                android:layout_height="@dimen/len_44" />
+
+            <FrameLayout
+                android:layout_toEndOf="@id/img_college_portrait"
+                android:layout_centerVertical="true"
+                android:layout_margin="@dimen/len_4"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/len_60">
+                <TextView
+                    android:text="@string/kaitong_text"
+                    android:textColor="@color/yellow_800"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/font_22"
+                    android:layout_gravity="start|top"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:text="@string/huiyuan_text"
+                    android:textSize="@dimen/font_14"
+                    android:layout_gravity="bottom"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </FrameLayout>
+
+            <ImageView
+                android:id="@+id/img_college_search"
+                android:layout_margin="@dimen/len_20"
+                android:layout_alignParentEnd="true"
+                android:src="@drawable/ic_search"
+                android:layout_width="25dp"
+                android:layout_height="wrap_content" />
+            <ImageView
+                android:layout_centerVertical="true"
+                android:layout_toStartOf="@id/img_college_search"
+                android:src="@drawable/ic_msg"
+                android:tint="#9c9c9c"
+                android:layout_width="30dp"
+                android:layout_height="wrap_content" />
+
+        </RelativeLayout>
+
+    </android.support.design.widget.AppBarLayout>
+
+</LinearLayout>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tool="http://schemas.android.com/tools">
+    <TextView
+        android:id="@+id/shuaxin"
+        tool:text="下拉刷新"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="80dp" />
+</LinearLayout>
