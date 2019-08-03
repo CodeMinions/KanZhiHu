@@ -1,4 +1,4 @@
-package me.codeminions.common.view.widget.recycler;
+package me.codeminions.common.widget.recycler;
 
 import android.support.annotation.LayoutRes;
 import android.support.annotation.NonNull;

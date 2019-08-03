@@ -38,4 +38,13 @@ ext{
     geniusVersion = '2.0.0'
     glideVersion = '3.7.0'
     circleimageviewVersion = '2.1.0'
+
+    glideVersion='3.7.0'
+    retrofitVersion='2.6.0'
+    gsonVersion='2.0.2'
+
+    okhttpVersion='3.9.1'
+
+    rxjavaVersion='2.2.10'
+    rxandroidVersion='2.1.1'
 }

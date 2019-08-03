@@ -2,7 +2,7 @@ package me.codeminions.zhizhi.frags.firstPage;
 
 import android.util.Log;
 
-import me.codeminions.common.view.app.Fragment;
+import me.codeminions.common.app.Fragment;
 import me.codeminions.zhizhi.R;
 
 public class HostListFragment extends Fragment {

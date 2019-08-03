@@ -3,9 +3,9 @@ package me.codeminions.zhizhi.helper;
 import android.support.annotation.NonNull;
 import android.view.View;
 
-import me.codeminions.common.view.widget.recycler.RecyclerAdapter;
+import me.codeminions.common.widget.recycler.RecyclerAdapter;
 import me.codeminions.zhizhi.R;
-import me.codeminions.zhizhi.bean.Answer;
+import me.codeminions.common.bean.Answer;
 import me.codeminions.zhizhi.view.DropRefreshRecyclerView.IRefreshHeader;
 
 public class RefreshAdapter extends RecyclerAdapter<Answer> {

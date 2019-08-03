@@ -1,4 +1,4 @@
-package me.codeminions.common.view.app;
+package me.codeminions.common.app;
 
 import android.content.Context;
 import android.os.Bundle;

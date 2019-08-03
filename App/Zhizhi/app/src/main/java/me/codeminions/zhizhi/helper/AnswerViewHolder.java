@@ -3,9 +3,9 @@ package me.codeminions.zhizhi.helper;
 import android.view.View;
 import android.widget.TextView;
 
-import me.codeminions.common.view.widget.recycler.RecyclerAdapter;
+import me.codeminions.common.widget.recycler.RecyclerAdapter;
 import me.codeminions.zhizhi.R;
-import me.codeminions.zhizhi.bean.Answer;
+import me.codeminions.common.bean.Answer;
 
 public class AnswerViewHolder extends RecyclerAdapter.ViewHolder<Answer>{
     private TextView item1, item2, item3, item4;

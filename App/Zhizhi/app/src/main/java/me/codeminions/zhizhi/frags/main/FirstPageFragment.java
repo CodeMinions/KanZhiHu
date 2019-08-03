@@ -5,7 +5,7 @@ import android.support.v4.view.ViewPager;
 import android.view.View;
 import android.widget.TextView;
 
-import me.codeminions.common.view.app.Fragment;
+import me.codeminions.common.app.Fragment;
 import me.codeminions.zhizhi.R;
 import me.codeminions.zhizhi.activity.SearchActivity;
 import me.codeminions.zhizhi.helper.MyFragmentPageAdapter;
@@ -33,7 +33,7 @@ public class FirstPageFragment extends Fragment implements View.OnClickListener 
         mViewPager.setAdapter(fragmentAdapter);
         mTabLayout.setupWithViewPager(mViewPager);
 
-        mViewPager.setCurrentItem(0);
+        mViewPager.setCurrentItem(1);
 
 
         textView = (TextView) root.findViewById(R.id.txt_search);

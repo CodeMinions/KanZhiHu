@@ -9,10 +9,10 @@ import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.List;
 
-import me.codeminions.common.view.app.Fragment;
-import me.codeminions.common.view.widget.recycler.RecyclerAdapter;
+import me.codeminions.common.app.Fragment;
+import me.codeminions.common.widget.recycler.RecyclerAdapter;
 import me.codeminions.zhizhi.R;
-import me.codeminions.zhizhi.bean.Answer;
+import me.codeminions.common.bean.Answer;
 import me.codeminions.zhizhi.helper.RefreshAdapter;
 import me.codeminions.zhizhi.tools.MHandler;
 import me.codeminions.zhizhi.tools.SpacesItemDecoration;

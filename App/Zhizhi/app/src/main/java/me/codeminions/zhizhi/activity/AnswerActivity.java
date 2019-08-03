@@ -3,35 +3,25 @@ package me.codeminions.zhizhi.activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Message;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.animation.AnticipateInterpolator;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.RelativeLayout;
-import android.widget.ScrollView;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.geek.thread.GeekThreadManager;
-import com.geek.thread.ThreadPriority;
-import com.geek.thread.ThreadType;
-import com.geek.thread.task.GeekRunnable;
+import com.bumptech.glide.Glide;
 
-import java.io.IOException;
-import java.lang.ref.WeakReference;
-
+import de.hdodenhof.circleimageview.CircleImageView;
+import io.reactivex.observers.DisposableObserver;
+import me.codeminions.common.bean.Answer;
+import me.codeminions.common.net.RequestResult;
 import me.codeminions.zhizhi.R;
-import me.codeminions.zhizhi.bean.Answer;
-import me.codeminions.zhizhi.net.HttpUtil;
-import me.codeminions.zhizhi.tools.Constant;
-import me.codeminions.zhizhi.tools.MHandler;
+import me.codeminions.zhizhi.net.AnswerLoad;
 import me.codeminions.zhizhi.view.RLScrollView;
 import me.codeminions.zhizhi.view.UI;
-import okhttp3.Call;
-import okhttp3.FormBody;
-import okhttp3.Response;
 
 
 public class AnswerActivity extends AppCompatActivity {
@@ -41,6 +31,8 @@ public class AnswerActivity extends AppCompatActivity {
         intent.putExtra("an", answer);
         context.startActivity(intent);
     }
+
+    CircleImageView imageView;
 
     WebView web;
     TextView titleView;
@@ -71,39 +63,40 @@ public class AnswerActivity extends AppCompatActivity {
             }
         });
 
-        resquestContent();
+        requestContent();
 
     }
 
-    void initData(){
+    void initData() {
         titleView.setText(answer.getQuestion());
-        nameView.setText(answer.getAuthor());
-        desView.setText(answer.getAuthor_des());
+        nameView.setText(answer.getAuthor().getName());
+        desView.setText(answer.getAuthor().getAuthor_des());
     }
 
-    void initWeight(){
+    void initWeight() {
         titleView = findViewById(R.id.txt_question_tit);
         nameView = findViewById(R.id.txt_Name);
         desView = findViewById(R.id.txt_des);
         scrollView = findViewById(R.id.scroll);
         web = findViewById(R.id.web);
         bottom = findViewById(R.id.view_bottom);
+        imageView = findViewById(R.id.img_college_portrait);
 
         scrollView.setOnScrollListener(new RLScrollView.OnScrollChangedListener() {
             @Override
             public void onScrollChanged(int x, int y, int oldxX, int oldY) {
 
-                if(Math.abs(y-oldY) < 20)
-                    return ;
+                if (Math.abs(y - oldY) < 20)
+                    return;
 
                 float transY = 0;
 //                Toast.makeText(AnswerActivity.this, "滑动..", Toast.LENGTH_SHORT).show();
-                if(oldY < y) {
+                if (oldY < y) {
                     transY = UI.dipToPx(getResources(), 48);
                 }
                 bottom.animate()
                         .translationY(transY)
-                        .setInterpolator(new AnticipateInterpolator(1 ))
+                        .setInterpolator(new AnticipateInterpolator(1))
                         .setDuration(320)
                         .start();
             }
@@ -111,32 +104,30 @@ public class AnswerActivity extends AppCompatActivity {
     }
 
 
-    void resquestContent() {
+    void requestContent() {
 
-        GeekThreadManager.getInstance().execute(new GeekRunnable(ThreadPriority.LOW) {
-
-            String url = "/" + answer.getQuestionId() + "/" + answer.getAnswerId();
-            @Override
-            public void run() {
-                HttpUtil.sendHttpRequest(Constant.URL_BASE + Constant.URL_ANSWER, new FormBody.Builder()
-                        .add("con", url)
-                        .build(), new HttpUtil.MyCallback(){
+        new AnswerLoad().getAnswerDe(answer.getQuestionId(), answer.getAnswerId())
+                .subscribe(new RequestResult<>(new RequestResult.OnRequestResult<Answer>() {
                     @Override
-                    public void onResponse(Call call, Response response) throws IOException {
-                        content = response.body().string();
-                        handler.sendEmptyMessage(1);
-                    }
-                });
-            }
-        }, ThreadType.NORMAL_THREAD);
-    }
+                    public void onSuccess(Answer answer) {
+                        content = answer.getHtml();
+                        web.loadDataWithBaseURL(null,
+                                content.replaceAll("<*noscript>", ""),
+                                "text/html",
+                                "UTF-8",
+                                null);
 
-    MHandler handler = new MHandler(this, new MHandler.HandleCallBack() {
-        @Override
-        public void handleMessage(Message msg, WeakReference reference) {
-            web.loadDataWithBaseURL(null, content.replaceAll("<*noscript>", ""), "text/html", "UTF-8", null);
-        }
-    });
+                        Glide.with(AnswerActivity.this)
+                                .load(answer.getAuthor().getPic_address())
+                                .into(imageView);
+                    }
+
+                    @Override
+                    public void onFail(Throwable e) {
+                        Log.i("retrofit_error", e.getMessage());
+                    }
+                }));
+    }
 
 
     /**

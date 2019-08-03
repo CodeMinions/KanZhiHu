@@ -17,6 +17,7 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.geek.thread.GeekThreadManager;
 import com.geek.thread.ThreadPriority;
 import com.geek.thread.ThreadType;
@@ -28,10 +29,12 @@ import java.io.IOException;
 import java.lang.ref.WeakReference;
 import java.util.List;
 
-import me.codeminions.common.view.widget.recycler.RecyclerAdapter;
+import me.codeminions.common.net.RequestResult;
+import me.codeminions.common.widget.recycler.RecyclerAdapter;
 import me.codeminions.zhizhi.R;
-import me.codeminions.zhizhi.bean.Answer;
+import me.codeminions.common.bean.Answer;
 import me.codeminions.zhizhi.helper.AnswerViewHolder;
+import me.codeminions.zhizhi.net.AnswerLoad;
 import me.codeminions.zhizhi.net.HttpUtil;
 import me.codeminions.zhizhi.tools.Constant;
 import me.codeminions.zhizhi.tools.MHandler;
@@ -139,28 +142,21 @@ public class SearchActivity extends AppCompatActivity implements View.OnClickLis
 
 
     void requestResult() {
-        GeekThreadManager.getInstance().execute(new GeekRunnable(ThreadPriority.LOW) {
-            @Override
-            public void run() {
-                HttpUtil.sendHttpRequest(Constant.URL_BASE + Constant.URL_SEARCH, new FormBody.Builder()
-                        .add("q", searchContent)
-                        .build(), new HttpUtil.MyCallback() {
+        new AnswerLoad().getSearchAnswer(searchContent)
+                .subscribe(new RequestResult<>(new RequestResult.OnRequestResult<List<Answer>>() {
                     @Override
-                    public void onResponse(Call call, Response response) throws IOException {
-                        String data = response.body().string();
-                        parseJson(data);
-                        handler.sendEmptyMessage(GET_RESPONSE);
-                    }
-                });
-            }
-        }, ThreadType.NORMAL_THREAD);
-    }
+                    public void onSuccess(List<Answer> answer) {
+                        list = answer;
+                        Log.i("List Size", String.valueOf(list.size()));
 
-    void parseJson(String data) {
-        Gson gson = new Gson();
-        list = gson.fromJson(data, new TypeToken<List<Answer>>() {
-        }.getType());
-        Log.i("List Size", String.valueOf(list.size()));
+                        refreshList();
+                    }
+
+                    @Override
+                    public void onFail(Throwable e) {
+                        Log.i("retrofit_error", e.getMessage());
+                    }
+                }));
     }
 
     MHandler handler = new MHandler(this, new MHandler.HandleCallBack() {
@@ -171,12 +167,6 @@ public class SearchActivity extends AppCompatActivity implements View.OnClickLis
                     if (reference != null) {
                         SearchActivity activity = (SearchActivity) reference.get();
                         activity.requestResult();
-                    }
-                    break;
-                case GET_RESPONSE:
-                    if (reference != null) {
-                        SearchActivity activity = (SearchActivity) reference.get();
-                        activity.refreshList();
                     }
                     break;
             }

@@ -1,6 +1,6 @@
 package me.codeminions.zhizhi.frags.main;
 
-import me.codeminions.common.view.app.Fragment;
+import me.codeminions.common.app.Fragment;
 import me.codeminions.zhizhi.R;
 
 public class IdeaFragment extends Fragment {

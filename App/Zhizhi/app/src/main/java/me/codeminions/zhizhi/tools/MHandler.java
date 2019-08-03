@@ -6,7 +6,7 @@ import android.os.Message;
 
 import java.lang.ref.WeakReference;
 
-import me.codeminions.common.view.app.Fragment;
+import me.codeminions.common.app.Fragment;
 
 public class MHandler extends Handler {
     private WeakReference<Activity> referenceAct;

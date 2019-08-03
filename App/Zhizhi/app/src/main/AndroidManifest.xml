@@ -20,7 +20,6 @@
         </activity>
         <activity android:name=".activity.AnswerActivity" />
         <activity android:name=".activity.SearchActivity" />
-        <activity android:name=".tools.Trash$AnwerAct" />
     </application>
 
 </manifest>

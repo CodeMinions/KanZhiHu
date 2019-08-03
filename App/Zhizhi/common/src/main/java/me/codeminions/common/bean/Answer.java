@@ -1,19 +1,36 @@
-package me.codeminions.zhizhi.bean;
+package me.codeminions.common.bean;
+
+import com.google.gson.annotations.Expose;
 
 import java.io.Serializable;
 
 public class Answer implements Serializable {
-    private String author;
-    private String author_des;
 
+    @Expose
+    private User author;
+
+    @Expose
     private String question;
+    @Expose
     private String answer;
 
+    @Expose
+    private String html;
+
+    @Expose
     private String questionId;
+    @Expose
     private String answerId;
 
+    @Expose
     private String praise;
+    @Expose
     private String comment;
+
+    public Answer(User author, String html) {
+        this.author = author;
+        this.html = html;
+    }
 
     public Answer(String author, String author_des, String question, String answer, String questionId, String answerId, String praise, String comment) {
         this(author, author_des, question, answer, questionId, answerId);
@@ -22,8 +39,7 @@ public class Answer implements Serializable {
     }
 
     public Answer(String author, String author_des, String question, String answer, String questionId, String answerId) {
-        this.author = author;
-        this.author_des = author_des;
+        this.author = new User(author, author_des);
         this.question = question;
         this.answer = answer;
         this.answerId = answerId;
@@ -58,22 +74,6 @@ public class Answer implements Serializable {
         return questionId;
     }
 
-    public String getAuthor() {
-        return author;
-    }
-
-    public String getAuthor_des() {
-        return author_des;
-    }
-
-    public String getPraise() {
-        return praise;
-    }
-
-    public String getComment() {
-        return comment;
-    }
-
     public void setAnswer(String answer) {
         this.answer = answer;
     }
@@ -81,4 +81,50 @@ public class Answer implements Serializable {
     public void setQuestion(String question) {
         this.question = question;
     }
+
+    public User getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(User author) {
+        this.author = author;
+    }
+
+    public String getHtml() {
+        return html;
+    }
+
+    public void setHtml(String html) {
+        this.html = html;
+    }
+
+    public String getPraise() {
+        return praise;
+    }
+
+    public void setPraise(String praise) {
+        this.praise = praise;
+    }
+
+    public String getComment() {
+        return comment;
+    }
+
+    public void setComment(String comment) {
+        this.comment = comment;
+    }
+
+    @Override
+    public String toString() {
+        return "Answer{" +
+                "author='" + author + '\'' +
+                ", question='" + question + '\'' +
+                ", answer='" + answer + '\'' +
+                ", questionId='" + questionId + '\'' +
+                ", answerId='" + answerId + '\'' +
+                ", praise='" + praise + '\'' +
+                ", comment='" + comment + '\'' +
+                '}';
+    }
 }
+
