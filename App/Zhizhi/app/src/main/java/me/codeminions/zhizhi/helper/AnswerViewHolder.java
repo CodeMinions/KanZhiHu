@@ -11,16 +11,16 @@ public class AnswerViewHolder extends RecyclerAdapter.ViewHolder<Answer>{
     private TextView item1, item2, item3, item4;
     public AnswerViewHolder(View view){
         super(view);
-        item1 = (TextView) view.findViewById(R.id.q);
-        item2 = (TextView) view.findViewById(R.id.a);
-        item3 = (TextView) view.findViewById(R.id.zan);
-        item4 = (TextView) view.findViewById(R.id.ping);
+        item1 = view.findViewById(R.id.q);
+        item2 = view.findViewById(R.id.a);
+        item3 = view.findViewById(R.id.zan);
+        item4 = view.findViewById(R.id.ping);
     }
 
     @Override
     protected void onBind(Answer data) {
         item1.setText(data.getQuestion());
-        item2.setText(String.format("%s: %s", data.getAuthor() ,data.getAnswer()));
+        item2.setText(String.format("%s: %s", data.getAuthor().getName() ,data.getAnswer()));
         item3.setText(String.format("%s 赞同", data.getPraise()));
         item4.setText(String.format("-    %s", data.getComment()));
     }

@@ -126,7 +126,7 @@ public class AnswerActivity extends AppCompatActivity {
                     public void onFail(Throwable e) {
                         Log.i("retrofit_error", e.getMessage());
                     }
-                }));
+                }, AnswerActivity.this));
     }
 
 

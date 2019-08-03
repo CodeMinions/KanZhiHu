@@ -52,7 +52,7 @@ public class RecommendFragment extends Fragment {
                     public void onFail(Throwable e) {
                         Log.i("retrofit_error", e.getMessage());
                     }
-                }));
+                }, mRoot.getContext()));
     }
 
 

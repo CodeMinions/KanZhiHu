@@ -156,7 +156,7 @@ public class SearchActivity extends AppCompatActivity implements View.OnClickLis
                     public void onFail(Throwable e) {
                         Log.i("retrofit_error", e.getMessage());
                     }
-                }));
+                }, SearchActivity.this));
     }
 
     MHandler handler = new MHandler(this, new MHandler.HandleCallBack() {

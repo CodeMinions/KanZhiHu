@@ -16,4 +16,18 @@
     </style>
 
     <style name="AppCompat.Base" parent="AppTheme.private" />
+
+    <!--LoadDialog样式-->
+    <style name="LoadDialog" parent="@style/Theme.AppCompat.Dialog">
+        <!--去掉边框-->
+        <item name="android:windowFrame">@null</item>
+        <!--悬浮-->
+        <item name="android:windowIsFloating">true</item>
+        <!--半透明-->
+        <item name="android:windowIsTranslucent">false</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:windowFullscreen">true</item>
+    </style>
 </resources>
