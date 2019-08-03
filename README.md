@@ -1,11 +1,11 @@
 # KanZhiHu
 高仿知乎客户端
 
-![推荐页示例](./Img/推荐页示例.jpg)
+ <img src="./Img/推荐页示例.jpg" width = "400" alt="推荐页示例" align=left />
+ 
+ <img src="./Img/搜索页示例.jpg" width = "400" alt="搜索页示例" align=right />
+ 
+ <img src="./Img/答案页示例1.jpg" width = "400" alt="答案页示例1" align=left />
+ 
+ <img src="./Img/答案页示例3.jpg" width = "400" alt="答案页示例3" align=right />
 
- <img src="./Img/推荐页示例.jpg" width = "400" alt="搜索页示例" align=center />
-![搜索页示例](https://raw.githubusercontent.com/CodeMinions/KanZhiHu/master/Img/搜索页示例.jpg =50)
-
-![答案页示例1](https://raw.githubusercontent.com/CodeMinions/KanZhiHu/master/Img/答案页示例1.jpg)
-
-![答案页示例3](https://raw.githubusercontent.com/CodeMinions/KanZhiHu/master/Img/答案页示例3.jpg)
